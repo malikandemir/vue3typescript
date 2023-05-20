@@ -31,7 +31,7 @@ onMounted(() => {
     elNameInput.value?.focus()
 })
 
-const updateName = (event: InputEvent): void => {
+const updateName = (event: InputEvent) => {
     if (event.data === ' ') {
         newDish.value.name = (event.target as HTMLInputElement).value
     }
@@ -46,8 +46,7 @@ const updateName = (event: InputEvent): void => {
                 <label for="name" class="label">Name : {{ newDish.name }}</label>
                 <div class="control">
                     <input
-                        :value="newDish.name"
-                        @input="updateName"
+                        v-model="newDish.name"
                         type="text"
                         class="input is-large"
                         placeholder="Mystery Flavored Shrimp"

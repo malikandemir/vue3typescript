@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
 import {v4 as uuidv4} from 'uuid'
-import { restaurantStatusList } from "@/types/constants";
+import {restaurantStatusList} from "@/types/constants";
 import type {Restaurant} from "@/types/types";
 
 const emits = defineEmits<{
@@ -27,12 +27,12 @@ const cancelNewRestaurant = () => {
 
 const elNameInput = ref<HTMLInputElement | null>(null)
 
-onMounted(() =>{
+onMounted(() => {
     elNameInput.value?.focus()
 })
 
-const updateName = (event : InputEvent) => {
-    if(event.data === ' ') {
+const updateName = (event: InputEvent ) => {
+    if (event.data === ' ') {
         newRestaurant.value.name = (event.target as HTMLInputElement).value
     }
 }
@@ -46,13 +46,12 @@ const updateName = (event : InputEvent) => {
                 <label for="name" class="label">Name: {{ newRestaurant.name }}</label>
                 <div class="control">
                     <input
-                            :value="newRestaurant.name"
-                            @input="updateName"
-                            type="text"
-                            class="input is-large"
-                            placeholder="Beignet and the Jets"
-                            required
-                            ref="elNameInput"
+                        v-model="newRestaurant.name"
+                        type="text"
+                        class="input is-large"
+                        placeholder="Beignet and the Jets"
+                        required
+                        ref="elNameInput"
                     />
                 </div>
             </div>
