@@ -1,5 +1,5 @@
-import { defineStore } from "pinia";
-import type { Restaurant } from "@/types/types";
+import {defineStore} from "pinia";
+import type {Restaurant} from "@/types/types";
 
 
 type StateShape = {
@@ -40,11 +40,11 @@ export const useRestaurantStore = defineStore('RestaurantStore', {
     },
     // Methods
     actions: {
-        addRestaurant  (payload: Restaurant) {
+        addRestaurant(payload: Restaurant) {
             this.list.push(payload)
         },
 
-        deleteRestaurant (payload: Restaurant)  {
+        deleteRestaurant(payload: Restaurant) {
             this.list = this.list.filter((restaurant: Restaurant) => {
                 return restaurant.id !== payload.id
             })

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, onMounted, ref} from "vue";
-import { useRoute } from "vue-router";
+import {useRoute} from "vue-router";
 import NewRestaurantForm from '../components/NewRestaurantForm.vue'
 import RestaurantCard from '../components/RestaurantCard.vue'
 import SideMenu from '../components/SideMenu.vue'
@@ -44,8 +44,8 @@ onMounted(() => {
     }
 })
 
-const updateFilterText = (event : KeyboardEvent) => {
-    if(event.code === 'Enter') {
+const updateFilterText = (event: KeyboardEvent) => {
+    if (event.code === 'Enter') {
         filterText.value = (event.target as HTMLInputElement).value;
     }
 }
@@ -67,7 +67,7 @@ const updateFilterText = (event : KeyboardEvent) => {
                     <div class="level-left">
                         <div class="level-item">
                             <p class="subtitle is-5">
-                                <strong>{{ numberOfRestaurants }}</strong> restaurants
+                                <strong>{{ restaurantStore.numberOfRestaurant }}</strong> restaurants
                             </p>
                         </div>
 
