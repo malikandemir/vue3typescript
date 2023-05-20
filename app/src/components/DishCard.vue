@@ -4,10 +4,8 @@ import { computed } from "vue";
 
 
 type PropTypes = {
-    dish?: Dish
+    dish: Dish
 }
-
-let dish_empty: Dish
 
 const probs = defineProps<PropTypes>()
 
@@ -31,7 +29,7 @@ const statusColor = computed(() => {
 })
 
 const deleteDish = () => {
-    emits('delete-dish', probs.dish?probs.dish:dish_empty)
+    emits('delete-dish', probs.dish)
 }
 </script>
 

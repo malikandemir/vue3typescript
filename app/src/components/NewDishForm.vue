@@ -31,7 +31,7 @@ onMounted(() => {
     elNameInput.value?.focus()
 })
 
-const updateName = (event: InputEvent) => {
+const updateName = (event: InputEvent): void => {
     if (event.data === ' ') {
         newDish.value.name = (event.target as HTMLInputElement).value
     }
